@@ -1,14 +1,30 @@
 [
   {
     "id":1,
-    "name": "Rohit"
+    "name": "Rohit",
+    "diseases": [{
+      "type": "viral",
+      "comments": "random shiz"
+    }]
   },
   {
     "id":2,
-    "name": "Harshi"
+    "name": "Harshi",
+    "diseases": [{
+      "type": "fever",
+      "comments": "random fev"
+    },
+    {
+      "type": "viral",
+      "comments": "random shiz"
+    }]
   },
   {
     "id":3,
-    "name": "Ranjan"
+    "name": "Ranjan",
+    "diseases": [{
+      "type": "viral",
+      "comments": "random shiz"
+    }]
   }
 ]
