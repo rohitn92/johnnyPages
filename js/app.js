@@ -10,6 +10,10 @@ angular
       templateUrl: 'partials/search.html',
       controller: 'SearchController'
     })
+    .when('/addpatient',{
+      templateUrl: 'partials/addpatient.html',
+      controller: 'AddPatientController'
+    })
     .otherwise({
       redirectTo: '/'
     });

@@ -2,7 +2,7 @@
 <div class ="col-sm-4" ng-repeat="patient in patients">
 
               <h4><i class="glyphicon glyphicon-user"></i> {{patient.id}}</h4>
-              <h3>  <span class="">{{patient.name}}</span>
+              <h3>  <span class="">{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}</span>
               </h3>
               <div ng-repeat="disease in patient.diseases">
               <h4>{{disease.type}}

@@ -1,27 +1,23 @@
 [
   {
     "id":1,
-    "name": "Rohit",
-    "diseases": [{
-      "type": "viral",
-      "comments": "random shiz"
-    }]
-  },
-  {
-    "id":2,
-    "name": "Harshi",
-    "diseases": [{
-      "type": "fever",
-      "comments": "random fev"
-    },
-    {
-      "type": "viral",
-      "comments": "random shiz"
-    }]
-  },
-  {
-    "id":3,
-    "name": "Ranjan",
+    "firstName": "Rohit",
+    "middleName": "Kumar",
+    "lastName": "Nigam",
+    "dateTime": "",
+    "address": [{
+      "houseno":"404",
+      "building":"United Daffodils",
+      "street":"BMA College Road",
+      "locality":"Doddanekundi",
+      "area":"Mahadevapura",
+      "city":"Bangalore",
+      "state":"Karnataka",
+      "country":"India"
+      }],
+      "phone":"9034164146",
+      "gender":"male",
+      "age": "23",
     "diseases": [{
       "type": "viral",
       "comments": "random shiz"
