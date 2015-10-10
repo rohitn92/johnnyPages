@@ -135,15 +135,19 @@
             <div class="panel-body" ng-show="addDiseases">
 
     		        <div class="row listing-form-row">
+
+                  <div class="col-sm-12">
+
                   <label for="basic-url">Disease</label>
 
+                                      <div class="input-group" ng-repeat="disease in newPatient.diseases">
                     <span class="input-group-addon">Type</span>
                     <select
                       type="select"
                       name="propertyType"
                       id="propertyType"
                       class="form-control"
-                      ng-model="newPatient.gender">
+                       ng-model="disease.type">
                         <option value="Diabetes">Diabetes</option>
                         <option value="High B.P.">High B.P.</option>
                         <option value="High Cholesterol">High Cholesterol</option>
@@ -156,24 +160,28 @@
                         <option value="Other">Other</option>
                     </select>
 
-                    <div class="input-group">
-                      <span class="input-group-addon">Age</span>
+                      <span class="input-group-addon">Comments</span>
                       <input
                         type="text"
                         placeholder="Enter the address"
                         class="form-control"
-                        ng-model="newPatient.age">
-
+                         ng-model="disease.comments">
+    <button ng-click="removeFrom(newPatient.diseases, $index)">X</button>
                 </div>
+
+  <button ng-click="addTo(newPatient.diseases,{type:'', comments: ''})">Add</button>
+
+</div>
+              </div>
             </div>
             <button
               class="btn btn-default listing-button"
-              ng-click="addDetails=!addDetails"
+              ng-click="addDetails=!addDetails; addDiseases = !addDiseases"
               >Next
             </button>
             <button
               class="btn btn-primary listing-button"
-              ng-click="addPatient(newPatient)"
+              ng-click="addPatient(newPatient); "
               >Add
             </button>
 

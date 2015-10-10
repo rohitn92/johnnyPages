@@ -5,7 +5,7 @@
     "middleName": "Kumar",
     "lastName": "Nigam",
     "dateTime": "",
-    "address": [{
+    "address": {
       "houseno":"404",
       "building":"United Daffodils",
       "street":"BMA College Road",
@@ -14,7 +14,7 @@
       "city":"Bangalore",
       "state":"Karnataka",
       "country":"India"
-      }],
+      },
       "phone":"9034164146",
       "gender":"male",
       "age": "23",
