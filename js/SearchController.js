@@ -1,16 +1,16 @@
 angular
 .module('ngJohnny')
-.controller('SearchController', function($scope, $firebaseObject){
+.controller('SearchController', function($scope, $firebaseArray){
   $scope.editDetails = true;
   $scope.editDiseases = false;
 //$scope.patients;
 
  var ref = new Firebase("https://flickering-torch-1357.firebaseio.com/patients");
 // var syncObject = $firebaseObject(ref);
-var syncObject = $firebaseObject(ref);
+//var syncObject = $firebaseObject(ref);
 // syncObject.$bindTo($scope, "patients");
- syncObject.$bindTo($scope, "patients");
-//$scope.patients=$firebaseArray(ref);
+ //syncObject.$bindTo($scope, "patients");
+$scope.patients=$firebaseArray(ref);
 
 // PatientFactory.getPatients().success(function(data){
 //   $scope.patients = data;
@@ -36,5 +36,10 @@ $scope.editPatient = function(patient) {
     $scope.existingPatient = patient;
   }
 
+$scope.closeEdit = function (existingPatient){
+  $scope.patients.$save(existingPatient);
+    $scope.editEnabled = false;
+    $scope.existingPatient = {};
+}
 
 });
