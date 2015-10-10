@@ -1,9 +1,198 @@
 <h1> Search</h1>
+
+<div id = "editForm" ng-if="editEnabled">
+  <div class="panel panel-default" >
+    <div class="panel-heading">
+      <h3 class="panel-title">Edit Patient</h3>
+    </div>
+    <div class="panel-body" ng-show="editDetails">
+
+    		        <div class="row listing-form-row">
+    		          <div class="col-sm-12">
+                    <label for="basic-url">Patient Name</label>
+    		            <div class="input-group">
+    		              <span class="input-group-addon">First Name</span>
+    		              <input
+    		              	type="text"
+    		              	placeholder="Enter the address"
+    		              	class="form-control"
+    		              	ng-model="existingPatient.firstName">
+                        <span class="input-group-addon">Middle Name</span>
+                        <input
+                          type="text"
+                          placeholder="Enter the address"
+                          class="form-control"
+                          ng-model="existingPatient.middleName">
+                          <span class="input-group-addon">Last Name</span>
+                          <input
+                            type="text"
+                            placeholder="Enter the address"
+                            class="form-control"
+                            ng-model="existingPatient.lastName">
+    		            </div>
+    		          </div>
+                  <div class="col-sm-12">
+                    <label for="basic-url">Details</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">Age</span>
+                      <input
+                        type="text"
+                        placeholder="Enter the address"
+                        class="form-control"
+                        ng-model="existingPatient.age">
+                      <span class="input-group-addon">Gender</span>
+                      <select
+                        type="select"
+                        name="propertyType"
+                        id="propertyType"
+                        class="form-control"
+                        ng-model="existingPatient.gender">
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                          <option value="Other">Other</option>
+                      </select>
+
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="basic-url">Address</label>
+    		            <div class="input-group">
+    		              <span class="input-group-addon">House No.</span>
+    		              <input
+    		              	type="text"
+    		              	placeholder="Enter the address"
+    		              	class="form-control"
+    		              	ng-model="existingPatient.address.houseno">
+                        <span class="input-group-addon">Building</span>
+                        <input
+                          type="text"
+                          placeholder="Enter the address"
+                          class="form-control"
+                          ng-model="existingPatient.address.building">
+                          <span class="input-group-addon">Street</span>
+                          <input
+                            type="text"
+                            placeholder="Enter the address"
+                            class="form-control"
+                            ng-model="existingPatient.address.street">
+    		            </div>
+    		          </div>
+
+                  <div class="col-sm-12">
+    		            <div class="input-group">
+    		              <span class="input-group-addon">Locality</span>
+    		              <input
+    		              	type="text"
+    		              	placeholder="Enter the address"
+    		              	class="form-control"
+    		              	ng-model="existingPatient.address.locality">
+                        <span class="input-group-addon">Area</span>
+                        <input
+                          type="text"
+                          placeholder="Enter the address"
+                          class="form-control"
+                          ng-model="existingPatient.address.area">
+                          <span class="input-group-addon">City</span>
+                          <input
+                            type="text"
+                            placeholder="Enter the address"
+                            class="form-control"
+                            ng-model="existingPatient.address.city">
+    		            </div>
+    		          </div>
+
+                  <div class="col-sm-12">
+                    <div class="input-group">
+                      <span class="input-group-addon">State</span>
+                      <input
+                        type="text"
+                        placeholder="Enter the address"
+                        class="form-control"
+                        ng-model="existingPatient.address.state">
+                        <span class="input-group-addon">Country</span>
+                        <input
+                          type="text"
+                          placeholder="Enter the address"
+                          class="form-control"
+                          ng-model="existingPatient.address.country">
+
+                    </div>
+                  </div>
+
+
+    		        </div>
+
+
+
+    		      </div>
+
+              <div class="panel-body" ng-show="editDiseases">
+
+      		        <div class="row listing-form-row">
+
+                    <div class="col-sm-12">
+
+                    <label for="basic-url">Disease</label>
+
+                                        <div class="input-group" ng-repeat="disease in existingPatient.diseases">
+                      <span class="input-group-addon">Type</span>
+                      <select
+                        type="select"
+                        name="propertyType"
+                        id="propertyType"
+                        class="form-control"
+                         ng-model="disease.type">
+                          <option value="Diabetes">Diabetes</option>
+                          <option value="High B.P.">High B.P.</option>
+                          <option value="High Cholesterol">High Cholesterol</option>
+                          <option value="Anemia">Anemia</option>
+                          <option value="Stroke">Stroke</option>
+                          <option value="Cataracts">Cataracts</option>
+                          <option value="Tuberculosis">Tuberculosis</option>
+                          <option value="Heart Problems">Heart Problems</option>
+                          <option value="Kidney Problems">Kidney Problems</option>
+                          <option value="Other">Other</option>
+                      </select>
+
+                        <span class="input-group-addon">Comments</span>
+                        <input
+                          type="text"
+                          placeholder="Enter the address"
+                          class="form-control"
+                           ng-model="disease.comments">
+      <button ng-click="removeFrom(existingPatient.diseases, $index)">X</button>
+                  </div>
+
+    <button ng-click="addTo(existingPatient.diseases,{type:'', comments: ''})">Add</button>
+
+  </div>
+                </div>
+              </div>
+              <button
+                class="btn btn-default listing-button"
+                ng-click="editDetails=!editDetails;editDiseases = !editDiseases"
+                >Next
+              </button>
+              <button
+                class="btn btn-primary listing-button"
+                ng-click=""
+                >Add
+              </button>
+
+              <div class="panel-footer"><pre>{{existingPatient | json}}<pre></div>
+    </div>
+</div>
+
 <div class ="col-sm-4" ng-repeat="patient in patients">
 
               <h4><i class="glyphicon glyphicon-user"></i> {{patient.id}}</h4>
               <h3>  <span class="">{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}</span>
               </h3>
+              <button
+             class="btn btn-xs btn-primary"
+             ng-click="editPatient(patient)">Edit
+           </button>
               <div ng-repeat="disease in patient.diseases">
               <h4>{{disease.type}}
               Comments: {{disease.comments}}</h4>
