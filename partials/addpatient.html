@@ -4,7 +4,7 @@
   <div class="panel-heading">
     <h3 class="panel-title">Add New Patient</h3>
   </div>
-  <form>
+  <form name="myForm">
   <div class="panel-body" ng-show="addDetails">
 <label for="basic-url">Patient Name</label>
   		        <div class="row listing-form-row">
@@ -246,9 +246,11 @@
             </button>
             <button
               class="btn btn-success listing-button"
+              ng-disabled ="myForm.newPatient.firstName.$dirty && myForm.newPatient.firstName.$invalid ||
+  myForm.newPatient.lastName.$dirty && myForm.newPatient.lastName.$invalid"
               ng-click="addPatient(newPatient); "
               >Submit
             </button>
 </form>
-            <div class="panel-footer"></div>
+            <div class="panel-footer"><a href="#/home"><button class="btn btn-primary">Back</button></a></div>
   </div>
