@@ -1,18 +1,22 @@
 
 
     <div class="container">
-        <div class="jumbotron" style="padding-bottom:0px;">
-            <h2>Johnny Pages</h2>
-        </div>
-        <input type="text" ng-model="yourId" placeholder="Enter a name here">
-            <input type="text" ng-model="yourPass" placeholder="Enter a name here">
-            <hr>
-            <h1>Hello {{yourId}}!</h1>
-  <h1>Hello {{yourPass}}!</h1>
+      <form class="form-signin">
+        <h4 class="form-signin-heading">Welcome to your Patient Database</h4 >
 
-        <button class="btn btn-lg btn-primary btn-block"  ng-click="SignUp();">Sign Up</button>
-       <button class="btn btn-lg btn-primary btn-block" ng-click="Login()">Log In</button> </a>
+        <label class="sr-only">User ID</label>
+                <input type="text" id="inputEmail" class="form-control" placeholder="Enter Your Id" required autofocus ng-model="yourId" >
 
+                <label class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required  ng-model="yourPass">
+
+        <span ng-show="failedLogin" style="color:red"> Wrong Id or Password </span>
+
+
+       <button class="btn btn-lg btn-success btn-block"  type="submit" ng-click="Login()">Log In</button> </a>
+
+               <button class="btn btn-lg btn-default btn-block"  ng-click="SignUp();">Sign Up</button>
+ </form>
 <div>
   <pre>{{users | json}}<pre>
 </div>

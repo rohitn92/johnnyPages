@@ -6,7 +6,7 @@ $scope.addDiseases = false;
 $scope.newPatient = {};
 var ref = new Firebase("https://flickering-torch-1357.firebaseio.com/patients");
 $scope.patients=$firebaseArray(ref);
-$scope.newPatient.date = new Date().toLocaleString();
+$scope.newPatient.dateTime = new Date().toLocaleString();
 
 
   $scope.newPatient.diseases = [{type:'', comments: ''}];
@@ -26,7 +26,7 @@ $scope.patients.$add(newPatient).then(function(){
   console.log('successfully written');
 });
 $scope.newPatient = {};
-$scope.newPatient.date = new Date().toLocaleString();
+$scope.newPatient.dateTime = new Date().toLocaleString();
 $scope.newPatient.diseases = [{type:'', comments: ''}];
 $scope.addDetails = true;
 $scope.addDiseases = false;

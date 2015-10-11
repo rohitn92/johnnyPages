@@ -4,41 +4,65 @@
   <div class="panel-heading">
     <h3 class="panel-title">Add New Patient</h3>
   </div>
+  <form>
   <div class="panel-body" ng-show="addDetails">
-
+<label for="basic-url">Patient Name</label>
   		        <div class="row listing-form-row">
-  		          <div class="col-sm-12">
-                  <label for="basic-url">Patient Name</label>
+
+                  <div class="col-sm-4">
   		            <div class="input-group">
-  		              <span class="input-group-addon">First Name</span>
+  		              <span class="input-group-addon">First</span>
   		              <input
   		              	type="text"
-  		              	placeholder="Enter the address"
+  		              	placeholder="Name"
   		              	class="form-control"
-  		              	ng-model="newPatient.firstName">
-                      <span class="input-group-addon">Middle Name</span>
+  		              	ng-model="newPatient.firstName" required>
+</div>
+  		            </div>
+                  <div class="col-sm-4">
+                  <div class="input-group">
+  		          <span class="input-group-addon">Middle</span>
                       <input
                         type="text"
-                        placeholder="Enter the address"
+                        placeholder="Name"
                         class="form-control"
                         ng-model="newPatient.middleName">
-                        <span class="input-group-addon">Last Name</span>
+
+                          		            </div>
+  		            </div>
+                  <div class="col-sm-4">
+                  <div class="input-group">
+  		              <span class="input-group-addon" required>Last  </span>
                         <input
                           type="text"
-                          placeholder="Enter the address"
+                          placeholder="Name"
                           class="form-control"
                           ng-model="newPatient.lastName">
   		            </div>
-  		          </div>
-                <div class="col-sm-12">
-                  <label for="basic-url">Details</label>
+                    		            </div>
+</div>
+
+
+                    <label for="basic-url">Details</label>
+<div class="row listing-form-row">
+
+                <div class="col-sm-4">
+
                   <div class="input-group">
                     <span class="input-group-addon">Age</span>
                     <input
-                      type="text"
-                      placeholder="Enter the address"
+                      type="number"
+                      placeholder="Digits"
                       class="form-control"
                       ng-model="newPatient.age">
+
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+
+                  <div class="input-group">
+
                     <span class="input-group-addon">Gender</span>
                     <select
                       type="select"
@@ -50,6 +74,14 @@
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
                     </select>
+
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+
+                  <div class="input-group">
+
                     <span class="input-group-addon" >Date</span>
                     <input
                       type="text"
@@ -59,9 +91,11 @@
                       ng-model="newPatient.dateTime">
                   </div>
                 </div>
+</div>
 
-                <div class="col-sm-12">
-                  <label for="basic-url">Address</label>
+  <label for="basic-url">Address</label>
+<div class="row listing-form-row">
+                <div class="col-sm-4">
   		            <div class="input-group">
   		              <span class="input-group-addon">House No.</span>
   		              <input
@@ -69,12 +103,20 @@
   		              	placeholder="Enter the address"
   		              	class="form-control"
   		              	ng-model="newPatient.address.houseno">
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+    		            <div class="input-group">
                       <span class="input-group-addon">Building</span>
                       <input
                         type="text"
                         placeholder="Enter the address"
                         class="form-control"
                         ng-model="newPatient.address.building">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+      		            <div class="input-group">
                         <span class="input-group-addon">Street</span>
                         <input
                           type="text"
@@ -84,20 +126,28 @@
   		            </div>
   		          </div>
 
-                <div class="col-sm-12">
-  		            <div class="input-group">
+                <div class="col-sm-4">
+                  <div class="input-group">
   		              <span class="input-group-addon">Locality</span>
   		              <input
   		              	type="text"
   		              	placeholder="Enter the address"
   		              	class="form-control"
   		              	ng-model="newPatient.address.locality">
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+    		            <div class="input-group">
                       <span class="input-group-addon">Area</span>
                       <input
                         type="text"
                         placeholder="Enter the address"
                         class="form-control"
                         ng-model="newPatient.address.area">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+      		            <div class="input-group">
                         <span class="input-group-addon">City</span>
                         <input
                           type="text"
@@ -107,14 +157,18 @@
   		            </div>
   		          </div>
 
-                <div class="col-sm-12">
-                  <div class="input-group">
+                <div class="col-sm-6">
+  		            <div class="input-group">
                     <span class="input-group-addon">State</span>
                     <input
                       type="text"
                       placeholder="Enter the address"
                       class="form-control"
                       ng-model="newPatient.address.state">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+    		            <div class="input-group">
                       <span class="input-group-addon">Country</span>
                       <input
                         type="text"
@@ -133,20 +187,20 @@
   		      </div>
 
             <div class="panel-body" ng-show="addDiseases">
-
+  <label for="basic-url">Disease</label>
     		        <div class="row listing-form-row">
 
-                  <div class="col-sm-12">
 
-                  <label for="basic-url">Disease</label>
 
-                                      <div class="input-group" ng-repeat="disease in newPatient.diseases">
-                    <span class="input-group-addon">Type</span>
+
+  <div class="col-sm-10">
+                                      <div class="container-fluid" ng-repeat="disease in newPatient.diseases">
+                    <span class="">Type:</span>
                     <select
                       type="select"
                       name="propertyType"
                       id="propertyType"
-                      class="form-control"
+                      class=""
                        ng-model="disease.type">
                         <option value="Diabetes">Diabetes</option>
                         <option value="High B.P.">High B.P.</option>
@@ -160,30 +214,41 @@
                         <option value="Other">Other</option>
                     </select>
 
-                      <span class="input-group-addon">Comments</span>
+                      <span class="">Comments:</span>
                       <input
                         type="text"
                         placeholder="Enter the address"
-                        class="form-control"
+                        class=""
                          ng-model="disease.comments">
-    <button ng-click="removeFrom(newPatient.diseases, $index)">X</button>
+
+
+                           <span class="">
+    <button class = "btn btn-warning " ng-click="removeFrom(newPatient.diseases, $index)">Remove Disease</button></span>
+
                 </div>
 
-  <button ng-click="addTo(newPatient.diseases,{type:'', comments: ''})">Add</button>
+  <button class="btn btn-primary" ng-click="addTo(newPatient.diseases,{type:'', comments: ''})">Add  Another Disease</button>
 
 </div>
               </div>
             </div>
             <button
               class="btn btn-default listing-button"
+              ng-show="addDetails"
               ng-click="addDetails=!addDetails; addDiseases = !addDiseases"
-              >Next
+              >Add Diseases
             </button>
             <button
-              class="btn btn-primary listing-button"
-              ng-click="addPatient(newPatient); "
-              >Add
+              class="btn btn-default listing-button"
+              ng-show="addDiseases"
+              ng-click="addDetails=!addDetails; addDiseases = !addDiseases"
+              >Add Details
             </button>
-
-            <div class="panel-footer"><pre>{{newPatient | json}}<pre></div>
+            <button
+              class="btn btn-success listing-button"
+              ng-click="addPatient(newPatient); "
+              >Submit
+            </button>
+</form>
+            <div class="panel-footer"></div>
   </div>
