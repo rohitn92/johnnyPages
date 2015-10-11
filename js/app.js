@@ -1,11 +1,10 @@
 angular
-  .module('ngJohnny',['ui.bootstrap', 'ngRoute','firebase'])
+  .module('ngJohnny',['ui.bootstrap','ngRoute','firebase'])
   .config(function($routeProvider){
 
+
     $routeProvider
-    .when('/',{
-      templateUrl: 'partials/home.html',
-    })
+
     .when('/search',{
       templateUrl: 'partials/search.html',
       controller: 'SearchController'
@@ -14,7 +13,14 @@ angular
       templateUrl: 'partials/addpatient.html',
       controller: 'AddPatientController'
     })
+    .when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: 'LoginController'
+    })
+    .when('/home',{
+      templateUrl: 'partials/home.html',
+    })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/login'
     });
   });

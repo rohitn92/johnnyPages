@@ -5,6 +5,10 @@ angular
   $scope.editDiseases = false;
 //$scope.patients;
 
+$scope.datePicked = {
+  start: null,
+  end: null
+};
  var ref = new Firebase("https://flickering-torch-1357.firebaseio.com/patients");
 // var syncObject = $firebaseObject(ref);
 //var syncObject = $firebaseObject(ref);
